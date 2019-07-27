@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- vueの読み込み -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  </head>
+  <body>
+    test
+    <br/>
+    <div id="app">
+      {{ message }}
+    </div>
+    <script>
+      <!-- idで引っ掛けて、動的に文字を置き換える -->
+      var app = new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue!!'
+        }
+      })
+      console.log("コンソールに出力されることを確認")
+    </script>
+  </body>
+</html>
