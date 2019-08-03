@@ -12,8 +12,13 @@
     </div>
     <div id="app-2">
       <span v-bind:title="message">
-        Hover me !!
+        Hover me !!<br/>
+        ↑カーソルを合わせてみよう
       </span>
+    </div>
+    <div id="app-3">
+      <span v-if="seen">Now you see me</span><br/>
+      ↑F12を押してコンソールでapp3.seen = falseを入力してみよう
     </div>
     <script>
       <!-- idで引っ掛けて、動的に文字を置き換える -->
@@ -24,10 +29,18 @@
         }
       })
       console.log("コンソールに出力されることを確認")
+      // カーソルを合わせたときの挙動(v-bind)
       var app2 = new Vue({
         el: '#app-2',
         data: {
           message: 'Loadging now' + new Date().toLocaleString()
+        }
+      })
+      // フラグによって分岐をする(v-if)
+      var app3 = new Vue({
+        el: '#app-3',
+        data: {
+          seen: true
         }
       })
     </script>
