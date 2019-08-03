@@ -34,6 +34,10 @@
       <button v-on:click="reverseMessage">ReverseMessage</button><br/>
       ↑ボタンを押すと、反転するよ
     </div>
+    <div id="app-6">
+      <p>{{ message }}</p>
+      <input v-model="message" />
+    </div>
 
 
     <script>
@@ -59,7 +63,7 @@
           seen: true
         }
       })
-      // ループ処理
+      // ループ処理(v-for)
       var app4 = new Vue({
         el: '#app-4',
         data: {
@@ -70,7 +74,7 @@
           ]
         }
       })
-      // 関数を設定する場合
+      // 関数を設定する場合(この場合、メソッドの中でDOMの操作をしていない)(v-on:click)
       var app5 = new Vue({
         el: '#app-5',
         data: {
@@ -80,6 +84,13 @@
           reverseMessage: function(){
             this.message = this.message.split("").reverse().join("")
           }
+        }
+      })
+      // 双方へのレプリケーション処理(v-model)
+      var app6 = new Vue({
+        el: '#app-6',
+        data: {
+          message:  'Hello'
         }
       })
     </script>
