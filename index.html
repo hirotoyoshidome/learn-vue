@@ -36,9 +36,23 @@
     </div>
     <div id="app-6">
       <p>{{ message }}</p>
-      <input v-model="message" />
+      <input v-model="message" /><br/>
+      テキストボックスを弄ってみて
     </div>
 
+    <div>
+    Vueはコンポーネントの概念があり、コンポーネントをツリー状にすることで実装する。
+    このコンポーネントが各Vueのインスタンスであり、下記の様に使用する
+    </div>
+    <div id="app-7">
+      <ol>
+        <todo-item
+          v-for="item in groceryList"
+          v-bind:todo="item"
+          v-bind:key="item.id"
+        ></todo-item>
+      </ol>
+    </div>
 
     <script>
       <!-- idで引っ掛けて、動的に文字を置き換える -->
@@ -91,6 +105,22 @@
         el: '#app-6',
         data: {
           message:  'Hello'
+        }
+      })
+
+      // コンポーネント
+      Vue.component('todo-item', {
+        props: ['todo'],
+        template: '<li>{{ todo.text }}{{ todo.id }}</li>'
+      })
+      var app7 = new Vue({
+        el: '#app-7',
+        data: {
+          groceryList: [
+            { id: 0, text: "four" },
+            { id: 1, text: "five" },
+            { id: 2, text: "six" }
+          ]
         }
       })
     </script>
