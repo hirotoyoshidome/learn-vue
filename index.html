@@ -29,6 +29,13 @@
       app4.todos.push({ text: 'New item' })と入力してみよう<br/>
       jQueryのように追加されるよ
     </div>
+    <div id="app-5">
+      <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">ReverseMessage</button><br/>
+      ↑ボタンを押すと、反転するよ
+    </div>
+
+
     <script>
       <!-- idで引っ掛けて、動的に文字を置き換える -->
       var app = new Vue({
@@ -61,6 +68,18 @@
             { text: "two" },
             { text: "three" }
           ]
+        }
+      })
+      // 関数を設定する場合
+      var app5 = new Vue({
+        el: '#app-5',
+        data: {
+          message: "Hello!"
+        },
+        methods: {
+          reverseMessage: function(){
+            this.message = this.message.split("").reverse().join("")
+          }
         }
       })
     </script>
