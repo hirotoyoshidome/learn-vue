@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<title>親コンポーネントと子コンポーネント間の通信</title>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="fruit-counter">
+    <div v-for="fruit in fruits">
+        {{ fruit.name }}: <counter-botton v-on:increment="incrementCartStatus()"></counter-botton>
+    </div>
+    <p>合計: {{ total }}</p>
+</div>
+<script>
+// ボタンを表示するコンポーネントを作成とクリックされたときにaddToCartメソッドを発火させるように設定
+var counterBotton = Vue.extend({
+    template: '<span>{{ counter }}個<button v-on:click="addToCart">追加</button></span>',
+    data: function(){
+        return {
+            counter: 0
+        }
+    },
+    // 発火されたメソッドでカウンターを+1して親コンポーネントのincrementを発火させる
+    methods: {
+        addToCart: function(){
+            this.counter += 1
+            this.$emit('increment')
+        }
+    }
+})
+new Vue({
+    el: '#fruit-counter',
+    components: {
+        'counter-botton': counterBotton
+    },
+    data: {
+        total: 0,
+        fruits: [
+            {
+                name: 'apple'
+            },
+            {
+                name: 'orange'
+            }
+        ]
+    },
+    // 子コンポーネントから伝播され、発火されるメソッド
+    methods: {
+        incrementCartStatus: function(){
+            this.total += 1
+        }
+    }
+})
+</script>
