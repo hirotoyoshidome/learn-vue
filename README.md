@@ -8,6 +8,8 @@
 git clone https://github.com/hirotoyoshidome/vue_sample.git
 ```
 
+※テストFWのkarmaは後で別で勉強する
+
 ### ブラウザで下記を検索する
 
 * リファレンスのサンプル(試し)
