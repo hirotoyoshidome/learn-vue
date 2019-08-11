@@ -28,4 +28,8 @@ file://{clone dir}/vue_sample/sample_chapter2/index.html
 file://{clone dir}/vue_sample/sample_chapter3/template.html
 ```
 
-* 
+* チャプター3のconstructorベースでのコンポーネント
+
+```
+/home/hiroto/work/vue_sample/sample_chapter3/constructor.html
+```

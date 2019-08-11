@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<title>chapter 3  constructor</title>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="app">
+    <sample-view></sample-view>
+</div>
+
+<script>
+// あまり使用しない
+var ContentsSample = Vue.extend({
+    template: '<h1>サンプル表示</h1>'
+})
+var sampleVue = Vue.extend({
+    template: '<p>このようにコンポーネントで設定することでカスタム要素を増やすことができる</p>'
+})
+
+// ネストした階層に適用する場合
+Vue.component('sample-view', sampleVue)
+new Vue({
+    el: '#app'
+})
+
+// マウントする場合
+// new ContentsSample().$mount('#app')
+</script>
