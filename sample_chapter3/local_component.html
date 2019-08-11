@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<title>chapter 3 local component</title>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<div id="fruit-list">
+    <fruit-list-title></fruit-list-title>
+</div>
+
+<script>
+// fruit-list-titleはローカルコンポーネントになっている
+new Vue({
+    el: '#fruit-list',
+    components: {
+        'fruit-list-title': {
+            template: '<h1>フルーツ一覧</h1>'
+        }
+    }
+})
+</script>

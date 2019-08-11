@@ -31,5 +31,11 @@ file://{clone dir}/vue_sample/sample_chapter3/template.html
 * チャプター3のconstructorベースでのコンポーネント
 
 ```
-/home/hiroto/work/vue_sample/sample_chapter3/constructor.html
+file://{clone dir}/vue_sample/sample_chapter3/constructor.html
+```
+
+* ローカルコンポーネント
+
+```
+file://{clone dir}/vue_sample/sample_chapter3/local_component.html
 ```
