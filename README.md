@@ -45,3 +45,9 @@ file://{clone dir}/vue_sample/sample_chapter3/local_component.html
 ```
 file://{clone dir}/vue_sample/sample_chapter3/parent_child_component.html
 ```
+
+* 親コンポーネントから子コンポーネントへの情報の伝播
+
+```
+file://{clone dir}/vue_sample/sample_chapter3/child_parent_component.html
+```

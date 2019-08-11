@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+<tilte>to child from parent propagation</tilte>
+
+<div id="app">
+    <!-- item-nameのように-でつなげるケバブ式で記述する。myItemは親コンポーネントの方と合わせる必要がある -->
+    <item-desc v-bind:item-name="myItem"></item-desc>
+</div>
+
+<script>
+// 子コンポーネント
+Vue.component('item-desc', {
+    // こっちではケバブ式ではなく、キャメル式で記述する、ここでは親から受け取る属性を設定する
+    props: {
+        itemName: {
+            type: String
+        }
+    },
+    template: '<p>{{ itemName }}は便利です</p>'
+})
+
+// 親コンポーネント
+new Vue({
+    el: '#app',
+    // myItemはHTMLの値と合わせることで子にデータを渡すことができる
+    data: {
+        myItem: 'pen'
+    }
+})
+</script>
