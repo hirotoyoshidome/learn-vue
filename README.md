@@ -51,3 +51,9 @@ file://{clone dir}/vue_sample/sample_chapter3/parent_child_component.html
 ```
 file://{clone dir}/vue_sample/sample_chapter3/child_parent_component.html
 ```
+
+* ログインのサンプル
+
+```
+file://{clone dir}/vue_sample/sample_chapter3/login.html
+```
