@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>sample vue router</title>
+    </head>
+    <body>
+        <div id="app">
+            <router-link to="/top">トップページ(基本的なルーティングの記法)</router-link>
+            <router-link :to="{ name: 'user', params: { userId: 123 }}">ユーザー一覧ページ(パラメータを持っているときの記法)</router-link>
+            <router-link to="/redirect">トップページへのリダイレクト</router-link>
+            <router-view></router-view>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+        <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+        <script>
+            var router = new VueRouter({
+                routes: [
+                    {
+                        path: '/top',
+                        component: {
+                            template: '<div>トップページです</div>'
+                        }
+                    },
+                    {
+                        // 名前付きのルーティング方法
+                        path: '/users/:userId',
+                        name: 'user',
+                        component: {
+                            template: '<div>ユーザー一覧ページです。ユーザーIDは {{ $route.params.userId }}</div>'
+                        }
+                    }
+                ]
+            })
+
+            // フック関数
+            // #/redirectへアクセスするとトップページにリダイレクトする
+            router.beforeEach(function(to, from, next){
+                if(to.path === '/redirect'){
+                    next('top')
+                }else{
+                    next()
+                }
+            })
+
+            var app = new Vue({
+                router: router
+            }).$mount('#app')
+        </script>
+    </body>
+</html>
