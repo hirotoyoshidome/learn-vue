@@ -10,52 +10,7 @@ git clone https://github.com/hirotoyoshidome/vue_sample.git
 
 ※テストFWのkarmaは後で別で勉強する
 
-### ブラウザで下記を検索する
+### Vue.js 入門(技術評論社)で勉強＆リファレンスで勉強
 
-* リファレンスのサンプル(試し)
+５章以降は本読んだだけ（４章までは実装した）
 
-```
-file://{clone dir}/vue_sample/reference_tutorial/index.html
-```
-
-* チャプター2のサンプル(Vueインスタンスの各メソッド)
-
-```
-file://{clone dir}/vue_sample/sample_chapter2/index.html
-```
-
-* チャプター3のtemplateベースでのコンポーネント
-
-```
-file://{clone dir}/vue_sample/sample_chapter3/template.html
-```
-
-* チャプター3のconstructorベースでのコンポーネント
-
-```
-file://{clone dir}/vue_sample/sample_chapter3/constructor.html
-```
-
-* ローカルコンポーネント
-
-```
-file://{clone dir}/vue_sample/sample_chapter3/local_component.html
-```
-
-* 子コンポーネントから親コンポーネントへの情報の伝播
-
-```
-file://{clone dir}/vue_sample/sample_chapter3/parent_child_component.html
-```
-
-* 親コンポーネントから子コンポーネントへの情報の伝播
-
-```
-file://{clone dir}/vue_sample/sample_chapter3/child_parent_component.html
-```
-
-* ログインのサンプル
-
-```
-file://{clone dir}/vue_sample/sample_chapter3/login.html
-```
